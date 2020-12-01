@@ -1,11 +1,11 @@
 require('dotenv').config();
 
 const express = require('express');
-const massive = require('maassive');
+const massive = require('massive');
 const session = require('express-session');
 
-const ctrl = require('./controller');
-const authCtrl = require('./authController')
+// const ctrl = require('./controller');
+// const authCtrl = require('./authController')
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -33,5 +33,7 @@ massive({
     console.log('DB is online!')
 })
 .catch(err => console.log(err))
+
+//ENDPOINTS
 
 app.listen(SERVER_PORT, () => console.log(`Server is operating on port: ${SERVER_PORT}`))
