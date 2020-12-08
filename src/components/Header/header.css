@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    position: relative;
+    height: 4rem;
+    width: 100vw;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-item{
+    color: white;
+    font-size: 20px;
+    padding-right: 3rem;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.header-item:hover{
+    color: steelblue;
+}

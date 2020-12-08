@@ -1,0 +1,82 @@
+body{
+    background-image: url(https://wallpaperaccess.com/full/1179614.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form {
+    display: flex;
+    height: 25rem;
+    width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+   
+    
+}
+
+.login-form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.login-form-logo{
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.input-text{
+    width: 80%;
+    height: 2rem;
+
+}
+
+.input-submit{
+    border: none;
+    width: 82%;
+    height: 3rem;
+    margin-top: 1rem;
+    color:black;
+    font-weight: bold;
+    background-color:steelblue;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.input-submit:hover{
+    background-color: silver;
+}
+
+
+
+
+
+.form-switcher{
+    display: flex;
+    margin-top: 3rem;
+    padding-bottom: 10px;
+    justify-content: center;
+    color: white;
+    
+}
+
+.form-switcher-option{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.form-switcher-option-selected{
+    color: steelblue;
+    
+}
+
