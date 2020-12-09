@@ -4,7 +4,7 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 
-// const ctrl = require('./controller');
+const ctrl = require('./controller');
 const authCtrl = require('./authController')
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
@@ -35,17 +35,17 @@ massive({
 .catch(err => console.log(err))
 
 //Authorization Endpoints
-app.post('/api/login', authCtrl.login)
 app.post('/api/register', authCtrl.register)
-app.delete('/api/logout', authCtrl.logout) 
+app.post('/api/login', authCtrl.login)
+app.post('/api/logout', authCtrl.logout) 
 
 //All the other endpoints
-app.get('/api/randomCar');
-app.get('/api/allCars');
-app.get('/api/oneCar');
-app.post('/api/favCar');
-app.put('/api/makeNote');
-app.delete('/api/deleteCar');
+app.get('/api/randomCar', ctrl.getRandomCar);
+app.get('/api/allCars', ctrl.getAllCars);
+app.get('/api/oneCar/:id', ctrl.getOneCar);
+app.post('/api/favCar', ctrl.getFavCar);
+app.put('/api/makeNote', ctrl.noteMaker);
+app.delete('/api/deleteCar', ctrl.deleteCar);
 
 
 

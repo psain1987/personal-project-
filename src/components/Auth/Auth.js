@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { registerUser, loginUser } from '../../redux/reducer';
 
 const Auth = () => {
 
@@ -8,32 +10,36 @@ const Auth = () => {
 
     const {email, password} = formData
 
-    // Endpoint calls
-    const registerUser = async (email, password) => {
-        try{
-            const res = await axios.post('/api/register', { email, password } )
-            console.log(res)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
+    const dispatch = useDispatch()
 
-    const loginUser = async (email, password) => {
-        try{
-            const res = await axios.post('/api/login', { email, password } )
-            console.log(res)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
+    // Endpoint calls
+    // const registerUser = async (email, password) => {
+    //     try{
+    //         const res = await axios.post('/api/register', { email, password } )
+    //         console.log(res)
+    //     }
+    //     catch(err){
+    //         console.log(err)
+    //     }
+    // }
+
+    // const loginUser = async (email, password) => {
+    //     try{
+    //         const res = await axios.post('/api/login', { email, password } )
+    //         console.log(res)
+    //     }
+    //     catch(err){
+    //         console.log(err)
+    //     }
+    // }
 
     // Functions 
     const onSubmit = e => {
         e.preventDefault();
-        if(register) registerUser(email, password);
-        else loginUser(email, password)
+
+        if(register) dispatch(registerUser(email, password));
+
+        else dispatch(loginUser(email, password));
     }
     
     const onChange = e => {

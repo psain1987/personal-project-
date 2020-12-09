@@ -51,8 +51,6 @@ module.exports = {
             console.log('Error on login function', err)
         }
            
-        
-        
     },
 
     logout: (req, res) => {
