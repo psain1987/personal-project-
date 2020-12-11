@@ -5,9 +5,13 @@ module.exports = {
     getRandomCar: async (req, res) => {
 
         const db = req.app.get('db')
+        try{
         const [randomCar] = await db.random_car();
         res.status(200).send(randomCar)
-        
+        }
+        catch(err){
+            console.log(err)
+        }
     },
     getAllCars: async (req, res) => {
 

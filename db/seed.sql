@@ -22,7 +22,7 @@ VALUES
 (2020, 'Volkswagen', 'GTI', 'Hatchback', 29000),
 (2020, 'Honda', 'Civic', 'Sedan', 25000),
 (2020, 'Chrysler', 'Pacifica', 'Mini Van', 34000),
-(2020, 'Chevrolet', 'Corvetter', 'Coupe', 58000),
+(2020, 'Chevrolet', 'Corvette', 'Coupe', 58000),
 (2020, 'Mercedes', 'AMG GT R', 'Coupe', 163000),
 (2020, 'Honda', 'Ridgeline', 'Truck', 34000),
 (2020, 'Dodge', 'Challenger', 'Coupe', 35000),

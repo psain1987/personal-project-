@@ -11,11 +11,11 @@ import store from './redux/store';
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
-     <React.StrictMode>
+      <React.StrictMode>
         <App />
       </React.StrictMode>
     </HashRouter>
- </Provider>,
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import reducer from './reducer';
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from './reducer'
 
-export default createStore(reducer)
+export default configureStore ({reducer: {user: userReducer}})
+

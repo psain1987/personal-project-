@@ -4,7 +4,11 @@
   "private": true,
   "main": "server/index.js",
   "proxy": "http://localhost:5555",
+  "nodemonConfig": {
+    "ignore": "src/*"
+  },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.3.0",
@@ -23,6 +27,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise-middleware": "^6.1.2",
+    "thunk": "0.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

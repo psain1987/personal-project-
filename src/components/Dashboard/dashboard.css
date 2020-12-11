@@ -7,10 +7,19 @@
 }
 
 .vehicle-header{
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .nav-btns{
+    text-align: center;
+}
+
+.random-car-box{
+    color: white;
+    text-align: center;
+}
+
+.vehicle-card{
     text-align: center;
 }

@@ -12,6 +12,6 @@ export default(
         <Route path='/cars' component={Cars}></Route>
         <Route path='/dash' component={Dashboard}></Route>
         <Route path='/this-car' component={SelectedCar}></Route>
-        <Route path='/fav' component={Favorites}></Route>
+        <Route path='/fav' component={Favorites}></Route> 
     </Switch>
 )
