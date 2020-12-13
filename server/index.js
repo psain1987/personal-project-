@@ -6,6 +6,7 @@ const session = require('express-session');
 
 const ctrl = require('./controller');
 const authCtrl = require('./authController')
+const middleware = require('./middleware')
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -35,6 +36,7 @@ massive({
 .catch(err => console.log(err))
 
 //Authorization Endpoints
+app.get('/api/oneUser', middleware.checkUser, authCtrl.getUser)
 app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.post('/api/logout', authCtrl.logout) 

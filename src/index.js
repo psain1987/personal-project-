@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { getUser } from  './redux/reducer';
 
+
+store.dispatch(getUser())
 
 ReactDOM.render(
   <Provider store={store}>

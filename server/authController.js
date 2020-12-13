@@ -2,6 +2,11 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
 
+
+    getUser: (req, res) => {
+        res.status(200).send(req.session.user);
+    },
+
     register: async (req, res) => {
 
         const db = req.app.get('db');
@@ -38,10 +43,8 @@ module.exports = {
             if (!foundUser) {
                 return res.status(401).send("Login credentials incorrect")
             }
-            console.log(foundUser)
 
             const authenticated = bcrypt.compareSync(password, foundUser.password)
-            console.log(authenticated)
             if (!authenticated) {
                 return res.status(401).send("Invalid email or password.")
             }
@@ -49,7 +52,6 @@ module.exports = {
                 id: foundUser.user_id,
                 email: foundUser.email
             }
-            console.log(req.session.user)
             return res.status(200).send(req.session.user)
         }
         catch (err) {

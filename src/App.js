@@ -8,7 +8,7 @@ import './components/Favorites/favorites.css';
 import './components/SelectedCar/selectedCar.css';
 import Header from './components/Header/Header';
 import { useLocation } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard';
+
 
 function App() {
 
@@ -16,8 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      {location.pathname !== '/' ? <Dashboard /> : null}
+      {location.pathname !== '/' ? <Header /> : null}
       {routes}
     </div>
   );

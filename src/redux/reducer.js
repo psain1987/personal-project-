@@ -10,6 +10,13 @@ const initialState = {
     error: null
 }
 
+export const getUser = createAsyncThunk('user/getUser', async () => {
+    
+        const res = await axios.get('/api/oneUser')
+        console.log(res)
+        return res.data
+    })
+    
 export const registerUser = createAsyncThunk('user/register', async (userCredentials, thunkAPI) => {
     try {
         const res = await axios.post('/api/register', userCredentials)
@@ -55,6 +62,14 @@ export const userSlice = createSlice({
         [loginUser.rejected]: (state, action) => {
             state.error = action.payload
         },
+        [getUser.fulfilled]: (state, action) => {
+            state.id = action.payload.id
+            state.email = action.payload.email
+            state.loggedOn = true
+        },
+        [getUser.rejected]: () => {
+            return initialState
+        },   
         [logoutUser.fulfilled]: () => {
             return initialState
         }

@@ -1,4 +1,6 @@
- 
+
+
+
  .header-piece{
      text-align: center;
      color: white;
@@ -14,7 +16,7 @@
  }
 
  .box{
-     margin: 20px;
+     margin: 1px;
  }
 
  .grid{
