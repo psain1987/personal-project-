@@ -3,6 +3,7 @@ import './allCars.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const AllCars = () => {
 
@@ -59,33 +60,33 @@ const AllCars = () => {
         { image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-nissan-gt-r-nismo-17-source-source-1601920338.jpg?crop=1xw:1xh;center,top&resize=980:*', year: '2020', make: 'Nissan', model: 'GT-R', price: '$113,000' },
         { image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/rm019-084fn-1601920344.jpg?crop=1xw:1xh;center,top&resize=980:*', year: '2020', make: 'RAM', model: '1500', price: '$33,000' },
         { image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20my-sti-7v2-1601920344.jpg?crop=1xw:1xh;center,top&resize=980:*', year: '2020', make: 'Subaru', model: 'WRX STI', price: '$37,000' },
-        { image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20my-sti-7v2-1601920344.jpg?crop=1xw:1xh;center,top&resize=980:*', year: '2020', make: 'Porsche', model: '911', price: '$99,000' },
+        { image: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/p20-0375-a3-rgb-1594844268.jpg?crop=1xw:1xh;center,top&resize=980:*', year: '2020', make: 'Porsche', model: '911', price: '$99,000' },
     ]
 
 
     const renderCar = (card, index) => {
         return (
-            <button>
-                <Card className='box' style={{ width: '18rem' }} key={index} >
-                    <Card.Img variant="top" src={card.image} />
-                    <Card.Body>
-                        <Card.Title > {card.year} {card.make} {card.model}
-                    <br/>
-                     {card.price} 
-                        </Card.Title>
-                        <Card.Text>
 
-                        </Card.Text>
+            <Card className='box' style={{ width: '18rem' }} key={index} >
+                <Card.Img src={card.image} />
+                <Card.Body>
+                    <Card.Title > {card.year} {card.make} {card.model}
+                        <br />
+                        {card.price}
+                    </Card.Title>
+                    <Card.Text> </Card.Text>
 
-                    </Card.Body>
-                </Card>
-            </button>
+                </Card.Body>
+                <Link to='/this-car'><button className='card-btn card-btn-details'>Details</button></Link>
+                <Link to='/fav'><button className='card-btn card-btn-favorites'>Add to Favorites</button></Link>
+            </Card>
         )
     }
 
     return (
         <div>
-            <h1 className='header-piece'> Click on the images to see details (this is not working yet)</h1>
+            <h1 className='header-piece'> Here is our full Inventory of cars at Auto Emporium</h1>
+            
             <div className='grid'>{carInfo.map(renderCar)}</div>
         </div>
 

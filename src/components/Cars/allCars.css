@@ -1,22 +1,15 @@
 
 
-
  .header-piece{
      text-align: center;
      color: white;
+     margin-top: 5rem;
  }
 
- .box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7, .box-8, .box-9, .box-10, .box-11, .box-12, .box-13, .box-14, .box-15, .box-16, .box-17, .box-18, .box-19, .box-20{
-     background-color: white;
-     border-radius: 10px 10px 10px 10px;
-     overflow: hidden;
-     height: 200px;
-     max-height: 35vh;
-     box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3);
- }
-
+ 
  .box{
-     margin: 1px;
+     margin: 20px;
+     
  }
 
  .grid{
@@ -24,8 +17,30 @@
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
+     margin-top: 5rem;
  }
 
  .grid > div {
      flex-basis: calc(20% - 40px); 
+     
  }
+
+ .card-btn{
+    border-color: black;
+    width: 98.75%;
+    
+ }
+
+ .card-btn-details{
+    margin: 2px;
+ }
+
+ .card-btn-favorites{
+    margin: 2px;
+ }
+
+ .card-btn:hover{
+     color: steelblue;
+ }
+
+ 

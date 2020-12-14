@@ -27,22 +27,21 @@ const Dashboard = () => {
     return (
         <div >
             <div>
-                <header className='welcome-tag'>Welcome To the Car Emporium! </header>
+                <h1 className='welcome-tag'>Welcome To the Auto Emporium </h1>
             </div>
             <div>
-                <h1 className='vehicle-header'>Take a look at this vehicle!</h1> 
+                <h2 className='vehicle-header'>We picked out this vehcile just for you!</h2> 
             </div>
 
             <div className='random-car-box'>
-                {year} {make} {model} {style} ONLY {price}
+                  Your very own {year} {make} {model}
             </div>
             <div className='vehicle-card'>
                 <img src={image} alt='logo' />
             </div>
-            <div className='nav-btns'>
-                <Link to='/cars' ><button>Cars</button></Link>
-                <Link to='/fav' ><button>Favorites</button></Link>
-            </div>
+            <p className='directions'>Use the navigation buttons at the top or click this button to see all of our cars <Link to='/cars'><button className='button'>Click Me!</button></Link></p>
+           
+            
         </div>
     )
 }
