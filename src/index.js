@@ -4,21 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { getUser } from  './redux/reducer';
 
+const Router = process.env.NODE_ENV === 'development' ? HashRouter : BrowserRouter
 
 store.dispatch(getUser())
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <Router>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </HashRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

@@ -1,9 +1,10 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 const Favorites = () => {
 
-    // const noFavorites = noFavs
-    //     ?
+   const [favorite, setFavorite] = useState();
         
 
     

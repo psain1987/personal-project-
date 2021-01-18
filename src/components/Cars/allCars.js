@@ -9,6 +9,7 @@ const AllCars = () => {
 
     // const [car, setCar] = useState({ year: '', make: '', model: '', style: '', price: '', image: '' });
     // const [randomCar, setRandomCar] = useState({ year: '', make: '', model: '', style: '', price: '', image: '' });
+    const [data, setData] = useState();
 
     // useEffect(() => {
     //     const getCars = async () => {
@@ -36,6 +37,10 @@ const AllCars = () => {
 
     //     getRandomCar()
     // }, [])
+
+    const handleChange = e => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    }
 
     // const { year, make, model, style, price, image } = car
     // const { year, make, model, style, price, image } = randomCar
@@ -86,7 +91,9 @@ const AllCars = () => {
     return (
         <div>
             <h1 className='header-piece'> Here is our full Inventory of cars at Auto Emporium</h1>
-            
+            <div className='filter-box'>
+                <input className='filter-box-box' onChange={e => handleChange(e)}></input>
+            </div>
             <div className='grid'>{carInfo.map(renderCar)}</div>
         </div>
 

@@ -1,4 +1,5 @@
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const SelectedCar = () => {
 
@@ -6,7 +7,7 @@ const SelectedCar = () => {
 
     return (
         <div>
-            <h1 className='title-piece'>This is the selected car component, this should display one car that you clicked on from the main cars page</h1>
+            <h1 className='title-piece'>This is the selected car component, this should display details of the car you selected from the cars page</h1>
         </div>
     )
 }

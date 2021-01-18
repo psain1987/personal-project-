@@ -18,9 +18,6 @@ const Auth = () => {
     });
 
 
-
-    // Functions 
-
     useEffect(() => {
         if (loggedOn) {
             history.push('/dash')
@@ -36,7 +33,7 @@ const Auth = () => {
         else dispatch(loginUser({ email, password }));
     }
 
-    const onChange = e => {
+    const handleChange = e => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
@@ -73,7 +70,7 @@ const Auth = () => {
                         placeholder='Email Address'
                         name='email'
                         value={email}
-                        onChange={e => onChange(e)}
+                        onChange={e => handleChange(e)}
                     //uncomment this later if I want to,    required
                     />
                     <input className='input-text'
@@ -81,7 +78,7 @@ const Auth = () => {
                         placeholder='Password'
                         name='password'
                         value={password}
-                        onChange={e => onChange(e)}
+                        onChange={e => handleChange(e)}
                     //uncomment this later if I want to,    required
                     />
                     <input className='input-submit'

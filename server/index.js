@@ -3,10 +3,11 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
+const path = require('path');
 
 const ctrl = require('./controller');
-const authCtrl = require('./authController')
-const middleware = require('./middleware')
+const authCtrl = require('./authController');
+const middleware = require('./middleware');
 
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -49,9 +50,11 @@ app.post('/api/favCar', ctrl.getFavCar);
 app.put('/api/makeNote', ctrl.noteMaker);
 app.delete('/api/deleteCar', ctrl.deleteCar);
 
+app.use(express.static(__dirname + '/../build'))
 
-
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../build/index.html'))
+})
 
 
 app.listen(SERVER_PORT, () => console.log(`Server is operating on port: ${SERVER_PORT}`))

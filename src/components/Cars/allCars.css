@@ -17,12 +17,11 @@
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
-     margin-top: 5rem;
+     margin-top: 1rem;
  }
 
  .grid > div {
      flex-basis: calc(20% - 40px); 
-     
  }
 
  .card-btn{
@@ -41,6 +40,13 @@
 
  .card-btn:hover{
      color: steelblue;
+ }
+
+ .filter-box{
+     display: flex;
+     justify-content: flex-end;
+     margin: 20px;
+     padding-top: 50px;
  }
 
  

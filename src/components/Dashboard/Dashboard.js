@@ -30,7 +30,7 @@ const Dashboard = () => {
                 <h1 className='welcome-tag'>Welcome To the Auto Emporium </h1>
             </div>
             <div>
-                <h2 className='vehicle-header'>We picked out this vehcile just for you!</h2> 
+                <h2 className='vehicle-header'>We picked out this vehicle just for you!</h2> 
             </div>
 
             <div className='random-car-box'>

@@ -15,12 +15,12 @@ const Header = () => {
         return state.user.loggedOn
     });
 
-    // useEffect(() => {
-    //     if (!loggedOn) {
-    //         history.push('/')
-    //     }
+    useEffect(() => {
+        if (!loggedOn) {
+            history.push('/')
+        }
 
-    // }, [loggedOn, history])
+    }, [loggedOn, history])
 
     return (
         <div className='header'>
