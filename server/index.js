@@ -50,10 +50,11 @@ app.post('/api/favCar', ctrl.getFavCar);
 app.put('/api/makeNote', ctrl.noteMaker);
 app.delete('/api/deleteCar', ctrl.deleteCar);
 
-app.use(express.static(__dirname + '/../build'))
+// app.use(express.static(__dirname + '/../build')) use a plus or comma
+app.use(express.static(`${__dirname}/../build`))
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../build/index.html'))
+    res.sendFile(path.join(__dirname, '../build/index.html'))
 })
 
 
